@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: reverseproxy:v3
+      image: ruchidevi/reverseproxy:v3
       ports:
           - 8080:8080
       restart: always
@@ -9,7 +9,7 @@ services:
         - backend-user
         - backend-gratitude
   backend-user:
-    image: udagram-api-userservice:v3
+    image: ruchidevi/udagram-api-userservice:v3
     environment:
       POSTGRES_USERNAME: $POSTGRES_USERNAME
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD 
@@ -21,7 +21,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   backend-gratitude:
-    image: udagram-api-gratitude:v3
+    image: ruchidevi/udagram-api-gratitude:v3
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
