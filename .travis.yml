@@ -18,7 +18,6 @@ install:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ruchidevi/udagram-api-user:v3
-  - docker push ruchidevi/udagram-api-feed:v3
+  - docker push ruchidevi/udagram-api-userservice:v3
+  - docker push ruchidevi/udagram-api-gratitude:v3
   - docker push ruchidevi/reverseproxy:v3
-  - docker push ruchidevi/udagram-frontend:v3
