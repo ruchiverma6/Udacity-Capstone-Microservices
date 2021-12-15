@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "533387ce-7778-4f04-9b3f-693b691d9788",
+		"_postman_id": "43dc3032-9fd4-4a2f-90ce-083931077d79",
 		"name": "capstonemicroservices",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -10,7 +10,17 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": null
+				"url": {
+					"raw": "{{host}}/api/v0/gratitude",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v0",
+						"gratitude"
+					]
+				}
 			},
 			"response": []
 		},
