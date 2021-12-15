@@ -1,26 +1,26 @@
 # Udacity-Capstone-Microservices
 In this project you will:
 
-Capstone project for AWS cloud Developer NanoDegree
+**Capstone project for AWS cloud Developer NanoDegree**
 This project will contain two microservices User Service to register and log-in user. Gratitude service allow user to post caption and image.
 we will do following for each microservice:
 Set up each microservice to be run in its own Docker container
 Set up a Travis CI pipeline to push images to Dockerhub
 Deploy the Dockerhub images to the Kubernetes cluster
 
-1. Before starting project, we need to set up following while running the application either locally or on the cloud. 
+**1. Before starting project, we need to set up following while running the application either locally or on the cloud. **
 An S3 bucket
 A PostgreSQL database
 
-2. Run Project locally:
+**2. Run Project locally:**
 npm install 
 npm run dev
 
 Visit http://localhost:8080/api/v0/gratitude and http://localhost:8080/api/v0/users in your web browser to verify that the application is running
 
-3. Run the project locally in a multi-container environment:
+**3. Run the project locally in a multi-container environment:**
 Create images
-# Remove unused and dangling images
+**# Remove unused and dangling images**
 docker image prune --all
 # Run this command from the directory where you have the "docker-compose-build.yaml" file present
 docker-compose -f docker-compose-build.yaml build --parallel
@@ -92,7 +92,6 @@ Expose External IP: You can expose the "reverseproxy" deployment using a Load Ba
 
 # Check the deployment names and their pod status
 kubectl get deployments
-# Create a Service object that exposes the frontend deployment
 # The command below will ceates an external load balancer and assigns a fixed, external IP to the Service.
 kubectl expose deployment reverseproxy --type=LoadBalancer --name=publicreverseproxy
 # Check name, ClusterIP, and External IP of all deployments
