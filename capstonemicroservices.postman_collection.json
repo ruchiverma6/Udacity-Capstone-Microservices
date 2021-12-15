@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "533387ce-7778-4f04-9b3f-693b691d9788",
+		"name": "capstonemicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/v0/gratitude",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "api/v0/user/auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host}}/api/v0/users/auth",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v0",
+						"users",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v0/users/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\":\"helloi@gmail.com\",\r\n\t\"password\":\"fancypass\"\r\n}"
+				},
+				"url": {
+					"raw": "{{host}}/api/v0/users/auth/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v0",
+						"users",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/v0/gratitude/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v0/gratitude/:id",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v0",
+						"gratitude",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/v0/gratitude",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvb2lAZ21haWwuY29tIiwiaWF0IjoxNjM5NDgxMjQ1fQ.NxiXBSh6LUc64RTdhMB8AtXesbLtG5tEEAwkr2F9lcQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{caption : \"Hey This is gratitude message\"}"
+				},
+				"url": {
+					"raw": "{{host}}/api/v0/gratitude",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v0",
+						"gratitude"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://a2ac0fb17fc4449cca4c6af831ac5949-590548976.us-east-1.elb.amazonaws.com:8080"
+		},
+		{
+			"key": "token\n",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvbmV3QGdtYWlsLmNvbSIsImlhdCI6MTYzOTQ4NTA5MH0.K-k89XvjoRir__hfB5YTJrmN8xRCzRRrS8J0f05RdXY"
+		}
+	]
+}

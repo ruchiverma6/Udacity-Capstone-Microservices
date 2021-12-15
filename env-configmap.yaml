@@ -1,0 +1,13 @@
+  
+apiVersion: v1
+kind: ConfigMap
+data:
+ POSTGRES_HOST: database2.cxu4vygdxvil.us-east-1.rds.amazonaws.com
+ POSTGRES_DB: database2
+ AWS_BUCKET: s3microservicesruchi
+ AWS_PROFILE: default
+ AWS_REGION: us-east-1
+ JWT_SECRET: helloworld
+ URL: http://localhost:8100
+metadata:
+  name: env-config
